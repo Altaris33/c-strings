@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
+#include <string.h>
 
 int main() {
     
@@ -72,6 +72,28 @@ int main() {
     printf("Enter something: ");
     scanf("%s", &input_str);
     printf("input entered: %s\n", input_str);
+
+    printf("\n\n===Strings: Length, Copy & Compare===\n\n");
+    printf("MANUAL WAY\n");
+
+    char my_str[] = "I am learning programming in C!";
+    printf("Calculating length of the string: \"%s\"\n", my_str);
+
+    // Finding the length of a String manually
+    // we keep on looping until we encounter the null-termination character
+    int i;
+    for (i = 0; my_str[i] != '\0'; i++);
+    printf("my_str length = %d\n", i);
+
+    // the size of the array will be different from the length of the string
+    // 1. because of the implied null character ('\0')
+    // 2. because the array of chars may be bigger than we know
+    printf("size of my_str =  %lu\n", sizeof(my_str));
+    printf("\n");
+
+    // C standard library convenient methods to get the length of a string
+    printf("USING C STD LIBRARY methods\n");
+    printf("my_str length (using library method) = %ld\n", strlen(my_str));
 
     return 0;
 }
